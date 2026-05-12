@@ -1,11 +1,21 @@
+""" @bruin
+
+name: raw.fao_food_security
+type: python
+
+@bruin """
+
+
+"""Ingest FAOSTAT Food Security bulk data into DuckDB."""
+
+
 import io
 import zipfile
 from datetime import datetime, timezone
 
-import requests
-import pandas as pd
 import duckdb
-
+import pandas as pd
+import requests
 
 FS_URL = "https://bulks-faostat.fao.org/production/Food_Security_Data_E_All_Data_(Normalized).zip"
 DUCKDB_PATH = "data/warehouse/food_security.duckdb"
