@@ -1,12 +1,9 @@
-""" @bruin
+"""@bruin
 
 name: raw.fao_food_security
 type: python
 
-@bruin """
-
-
-"""Ingest FAOSTAT Food Security bulk data into DuckDB."""
+@bruin"""
 
 
 import io
