@@ -1,0 +1,48 @@
+name: seeds.countries
+type: duckdb.seed
+connection: duckdb_default
+
+parameters:
+  path: countries.csv
+
+columns:
+  - name: iso3
+    type: varchar
+    description: "ISO 3166-1 alpha-3 country code"
+    checks:
+      - name: not_null
+      - name: unique
+  - name: m49
+    type: varchar
+    description: "UN M49 numeric country/area code (zero-padded string)"
+    checks:
+      - name: not_null
+      - name: unique
+  - name: country_name
+    type: varchar
+    checks:
+      - name: not_null
+  - name: official_name
+    type: varchar
+  - name: capital_city
+    type: varchar
+  - name: latitude
+    type: double
+    checks:
+      - name: not_null
+  - name: longitude
+    type: double
+    checks:
+      - name: not_null
+  - name: un_region
+    type: varchar
+  - name: un_subregion
+    type: varchar
+  - name: independent
+    type: boolean
+  - name: un_member
+    type: boolean
+  - name: income_group
+    type: varchar
+  - name: wb_region
+    type: varchar
