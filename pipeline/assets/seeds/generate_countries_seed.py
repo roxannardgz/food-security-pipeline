@@ -3,6 +3,14 @@ Generate the countries seed CSV.
 Output: pipeline/seeds/countries.csv
 
 External requirement: requests
+
+Sources:
+    - mledoze/countries JSON:
+      used for ISO3, M49 numeric code, country names, capital city,
+      latitude/longitude, UN-style region/subregion, independent flag,
+      and UN membership flag.
+    - World Bank Country API:
+      used for income group and World Bank region.
 """
 
 import csv
