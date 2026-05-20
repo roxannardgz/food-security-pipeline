@@ -1,5 +1,5 @@
 """@bruin
-name: raw.open_meteo_daily_weather_test
+name: raw.open_meteo_daily_weather
 type: python
 connection: duckdb_default
 
