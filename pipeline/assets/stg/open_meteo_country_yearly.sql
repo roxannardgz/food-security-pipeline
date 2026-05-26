@@ -9,6 +9,17 @@ depends:
 materialization:
   type: table
   strategy: create+replace
+
+columns:
+  - name: country_code
+    checks:
+      - name: not_null
+  - name: year
+    checks:
+      - name: not_null
+  - name: weather_observation_days
+    checks:
+      - name: not_null
 @bruin */
 
 

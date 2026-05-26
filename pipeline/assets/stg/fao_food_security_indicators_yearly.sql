@@ -10,6 +10,37 @@ depends:
 materialization:
   type: table
   strategy: create+replace
+
+columns:
+  - name: country_code
+    checks:
+      - name: not_null
+  - name: year
+    checks:
+      - name: not_null
+  - name: indicator_code
+    checks:
+      - name: not_null
+  - name: value
+    checks:
+      - name: not_null
+
+custom_checks:
+  - name: unique_country_year_indicator
+    description: "Combination of country_code, year, and indicator_code should be unique"
+    count: 0
+    query: |
+      SELECT
+          country_code,
+          year,
+          indicator_code,
+          COUNT(*) AS row_count
+      FROM {{ this }}
+      GROUP BY
+          country_code,
+          year,
+          indicator_code
+      HAVING COUNT(*) > 1
 @bruin */
 
 SELECT
