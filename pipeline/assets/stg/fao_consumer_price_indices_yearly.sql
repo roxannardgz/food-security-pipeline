@@ -31,6 +31,7 @@ LEFT JOIN seeds.countries AS c
      = LPAD(TRIM(CAST(c.m49 AS VARCHAR)), 3, '0')
 
 WHERE c.iso3 IS NOT NULL
+  AND cpi.element = 'Value'
 
 GROUP BY
     c.iso3,
