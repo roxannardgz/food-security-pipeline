@@ -5,6 +5,7 @@ connection: duckdb_default
 
 materialization:
   type: table
+  strategy: create+replace
 @bruin"""
 
 
