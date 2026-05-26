@@ -15,7 +15,7 @@ materialization:
 SELECT
     c.iso3 AS country_code,
     c.country_name,
-    LPAD(REPLACE(CAST(fs.area_code_m49x AS VARCHAR), '''', ''), 3, '0') AS country_code_m49,
+    LPAD(TRIM(REPLACE(CAST(fs.area_code_m49x AS VARCHAR), '''', '')), 3, '0') AS country_code_m49,
     fs.item_code AS indicator_code,
     fs.item AS indicator,
     fs.year,
@@ -34,13 +34,19 @@ SELECT
     MAX(CASE
         WHEN fs.element = 'Confidence interval: Upper bound'
         THEN fs.value
-    END) AS confidence_interval_upper_bound
+    END) AS confidence_interval_upper_bound,
+
+    MAX(CASE
+        WHEN fs.element = 'Value'
+        THEN fs.flag
+    END) AS value_flag
 
 FROM raw.fao_food_security AS fs
 
 LEFT JOIN seeds.countries AS c
-    ON LPAD(REPLACE(CAST(fs.area_code_m49x AS VARCHAR), '''', ''), 3, '0')
-     = LPAD(CAST(c.m49 AS VARCHAR), 3, '0')
+    ON LPAD(TRIM(REPLACE(CAST(fs.area_code_m49x AS VARCHAR), '''', '')), 3, '0')
+     = LPAD(TRIM(CAST(c.m49 AS VARCHAR)), 3, '0')
+
 WHERE c.iso3 IS NOT NULL
 
 GROUP BY
