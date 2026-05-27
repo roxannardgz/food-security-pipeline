@@ -39,13 +39,12 @@ from time import sleep
 import pandas as pd
 import requests
 
+from bruin import context
+
 
 OPEN_METEO_URL = "https://archive-api.open-meteo.com/v1/archive"
 
 COUNTRIES_SEED_PATH = Path("pipeline/assets/seeds/countries.csv")
-
-START_DATE = "2023-01-01"
-END_DATE = "2024-12-31"
 
 REQUEST_DELAY_SECONDS = 6
 RATE_LIMIT_WAIT_SECONDS = 65
@@ -265,19 +264,39 @@ def standardize_weather_response(df: pd.DataFrame) -> pd.DataFrame:
 
     return df[column_order]
 
+def get_climate_date_range() -> tuple[str, str]:
+    climate_start_year = int(context.vars.get("climate_start_year", 2020))
+    climate_end_year = int(context.vars.get("climate_end_year", 2024))
+
+    if climate_start_year > climate_end_year:
+        raise ValueError(
+            f"climate_start_year must be <= climate_end_year, "
+            f"got {climate_start_year} > {climate_end_year}"
+        )
+
+    start_date = f"{climate_start_year}-01-01"
+    end_date = f"{climate_end_year}-12-31"
+
+    return start_date, end_date
+
 
 def materialize() -> pd.DataFrame:
+    start_date, end_date = get_climate_date_range()
+
     countries = load_countries_seed(COUNTRIES_SEED_PATH)
 
+    print(f"Bruin vars received: {context.vars}")
+    print(f"Fetching daily weather from {start_date} to {end_date}.")
+
     print(f"Loaded {len(countries)} countries/entities from seed.")
-    print(f"Fetching daily weather from {START_DATE} to {END_DATE}.")
+    print(f"Fetching daily weather from {start_date} to {end_date}.")
     print("Fetching one country per request.")
     print(f"Request delay seconds: {REQUEST_DELAY_SECONDS}")
 
     weather = fetch_all_weather(
         countries=countries,
-        start_date=START_DATE,
-        end_date=END_DATE,
+        start_date=start_date,
+        end_date=end_date,
     )
 
     weather = standardize_weather_response(weather)

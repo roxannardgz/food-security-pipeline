@@ -8,10 +8,13 @@ materialization:
   strategy: create+replace
 @bruin"""
 
+import io
 from datetime import datetime, timezone
 
 import pandas as pd
 import requests
+
+from bruin import context
 
 
 UNDERNOURISHMENT_URL = (
@@ -29,14 +32,20 @@ def download_undernourishment_data(url: str) -> pd.DataFrame:
     )
     response.raise_for_status()
 
-    return pd.read_csv(pd.io.common.BytesIO(response.content))
+    return pd.read_csv(io.BytesIO(response.content))
 
 
 def materialize() -> pd.DataFrame:
-    start_year = 2020
-    end_year = 2024
+    start_year = int(context.vars.get("start_year", 2010))
+    end_year = int(context.vars.get("end_year", 2024))
+
+    if start_year > end_year:
+        raise ValueError(
+            f"start_year must be <= end_year, got {start_year} > {end_year}"
+        )
 
     df = download_undernourishment_data(UNDERNOURISHMENT_URL)
+
     df = df.drop(columns=["index_level_0"], errors="ignore")
     df = df.reset_index(drop=True)
 

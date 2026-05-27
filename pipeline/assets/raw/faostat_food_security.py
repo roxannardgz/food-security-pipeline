@@ -8,13 +8,14 @@ materialization:
   strategy: create+replace
 @bruin"""
 
-
 import io
 import zipfile
 from datetime import datetime, timezone
 
 import pandas as pd
 import requests
+
+from bruin import context
 
 FS_URL = "https://bulks-faostat.fao.org/production/Food_Security_Data_E_All_Data_(Normalized).zip"
 
@@ -56,14 +57,21 @@ def filter_years(df: pd.DataFrame, start_year: int, end_year: int) -> pd.DataFra
 
 
 def materialize() -> pd.DataFrame:
-    start_year = 2020
-    end_year = 2024
+    start_year = int(context.vars.get("start_year", 2010))
+    end_year = int(context.vars.get("end_year", 2024))
+
+    if start_year > end_year:
+        raise ValueError(
+            f"start_year must be <= end_year, got {start_year} > {end_year}"
+        )
 
     zip_bytes = download_faostat_zip(FS_URL)
     df = read_main_csv_from_zip(zip_bytes)
     df = filter_years(df, start_year, end_year)
 
+    df = df.drop(columns=["index_level_0"], errors="ignore")
+    df = df.reset_index(drop=True)
+
     df["ingested_at"] = datetime.now(timezone.utc)
 
     return df
-
