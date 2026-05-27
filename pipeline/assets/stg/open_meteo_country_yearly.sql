@@ -34,6 +34,8 @@ SELECT
     COUNT(DISTINCT date) AS weather_observation_days
 FROM 
     raw.open_meteo_daily_weather
+WHERE 
+  EXTRACT(YEAR FROM date) BETWEEN {{ var.start_year }} AND {{ var.end_year }}
 GROUP BY
     country_code, 
     country_name, 

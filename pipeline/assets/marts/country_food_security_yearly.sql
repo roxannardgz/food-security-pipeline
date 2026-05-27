@@ -60,6 +60,63 @@ custom_checks:
          OR economic_vulnerability_score > 1
          OR food_availability_pressure_score < 0
          OR food_availability_pressure_score > 1
+
+  - name: mart_years_within_analysis_range
+    description: "Mart should only contain years within the configured analysis range"
+    count: 0
+    query: |
+      SELECT *
+      FROM {{ this }}
+      WHERE year < {{ var.analysis_start_year }}
+         OR year > {{ var.analysis_end_year }}
+
+  - name: analysis_years_have_weather_coverage
+    description: "Every year in the analysis range should exist in the yearly weather staging table"
+    count: 0
+    query: |
+      WITH expected_years AS (
+          SELECT generate_series AS year
+          FROM generate_series(
+              {{ var.analysis_start_year }},
+              {{ var.analysis_end_year }}
+          )
+      ),
+
+      weather_years AS (
+          SELECT DISTINCT year
+          FROM stg.open_meteo_country_yearly
+      )
+
+      SELECT
+          expected_years.year
+      FROM expected_years
+      LEFT JOIN weather_years
+          ON expected_years.year = weather_years.year
+      WHERE weather_years.year IS NULL
+
+  - name: analysis_years_have_undernourishment_coverage
+    description: "Every year in the analysis range should exist in the undernourishment staging table"
+    count: 0
+    query: |
+      WITH expected_years AS (
+          SELECT generate_series AS year
+          FROM generate_series(
+              {{ var.analysis_start_year }},
+              {{ var.analysis_end_year }}
+          )
+      ),
+
+      undernourishment_years AS (
+          SELECT DISTINCT CAST(year AS INTEGER) AS year
+          FROM stg.owid_undernourishment_yearly
+      )
+
+      SELECT
+          expected_years.year
+      FROM expected_years
+      LEFT JOIN undernourishment_years
+          ON expected_years.year = undernourishment_years.year
+      WHERE undernourishment_years.year IS NULL
 @bruin */
 
 WITH spine AS (
@@ -69,6 +126,8 @@ WITH spine AS (
         CAST(year AS INTEGER) AS year,
         undernourishment_prevalence_pct
     FROM stg.owid_undernourishment_yearly
+    WHERE CAST(year AS INTEGER)
+        BETWEEN {{ var.analysis_start_year }} AND {{ var.analysis_end_year }}
 ),
 
 country_meta AS (

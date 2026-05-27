@@ -66,6 +66,7 @@ LEFT JOIN seeds.countries AS c
 
 WHERE c.iso3 IS NOT NULL
   AND cpi.element = 'Value'
+  AND CAST(cpi.year AS INTEGER) BETWEEN {{ var.start_year }} AND {{ var.end_year }}
 
 GROUP BY
     c.iso3,

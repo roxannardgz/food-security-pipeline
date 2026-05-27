@@ -47,6 +47,9 @@ SELECT
 
 FROM raw.worldbank_indicators
 
+WHERE 
+    year BETWEEN {{ var.start_year }} AND {{ var.end_year }}
+
 GROUP BY
     country_code,
     country_name,

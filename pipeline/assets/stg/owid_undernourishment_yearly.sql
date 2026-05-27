@@ -52,6 +52,7 @@ LEFT JOIN seeds.countries AS c
     ON raw.country_code = c.iso3
 
 WHERE c.iso3 IS NOT NULL
+  AND CAST(year AS INTEGER) BETWEEN {{ var.start_year }} AND {{ var.end_year }}
 
 ORDER BY
     raw.year,
