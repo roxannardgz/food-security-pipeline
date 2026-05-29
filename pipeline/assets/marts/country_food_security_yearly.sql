@@ -7,7 +7,7 @@ depends:
   - stg.owid_undernourishment_yearly
   - stg.fao_food_security_indicators_yearly
   - stg.fao_consumer_price_indices_yearly
-  - stg.worldbank_country_yearly
+  - stg.worldbank_indicators_yearly
   - stg.open_meteo_country_yearly
   - seeds.countries
 
@@ -184,11 +184,31 @@ economics AS (
     SELECT
         country_code,
         CAST(year AS INTEGER) AS year,
-        gdp_per_capita_current_usd,
-        poverty_headcount_215_pct,
-        inflation_consumer_prices_pct,
-        population_total
-    FROM stg.worldbank_country_yearly
+
+        MAX(CASE
+            WHEN indicator_code = 'NY.GDP.PCAP.CD'
+            THEN value
+        END) AS gdp_per_capita_current_usd,
+
+        MAX(CASE
+            WHEN indicator_code = 'SP.POP.TOTL'
+            THEN value
+        END) AS population_total,
+
+        MAX(CASE
+            WHEN indicator_code = 'FP.CPI.TOTL.ZG'
+            THEN value
+        END) AS inflation_consumer_prices_pct,
+
+        MAX(CASE
+            WHEN indicator_code = 'SI.POV.DDAY'
+            THEN value
+        END) AS poverty_headcount_215_pct
+
+    FROM stg.worldbank_indicators_yearly
+    GROUP BY
+        country_code,
+        CAST(year AS INTEGER)
 ),
 
 climate AS (
