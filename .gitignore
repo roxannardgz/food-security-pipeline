@@ -1,7 +1,14 @@
 .venv/
 __pycache__/
+*.pyc
 
 .bruin.yml
 
 *.duckdb
 *.duckdb.wal
+logs/runs
+logs/*.log
+*.py[cod]
+
+.vscode/
+logs/queries
