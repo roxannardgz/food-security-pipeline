@@ -32,7 +32,6 @@ columns:
     type: timestamp
 @bruin"""
 
-from datetime import datetime, timezone
 from pathlib import Path
 from time import sleep
 
@@ -103,11 +102,7 @@ def load_countries_seed(seed_path: Path) -> pd.DataFrame:
     return countries
 
 
-def get_with_retries(
-    url: str,
-    params: dict,
-    max_retries: int = 5,
-) -> requests.Response:
+def get_with_retries(url: str, params: dict, max_retries: int = 5) -> requests.Response:
     last_response = None
 
     for attempt in range(max_retries):
@@ -134,14 +129,7 @@ def get_with_retries(
     return last_response
 
 
-def fetch_weather_for_country(
-    iso3: str,
-    country_name: str,
-    latitude: float,
-    longitude: float,
-    start_date: str,
-    end_date: str,
-) -> pd.DataFrame | None:
+def fetch_weather_for_country(iso3: str, country_name: str, latitude: float, longitude: float,start_date: str, end_date: str,) -> pd.DataFrame | None:
     params = {
         "latitude": latitude,
         "longitude": longitude,
@@ -177,11 +165,7 @@ def fetch_weather_for_country(
     return weather
 
 
-def fetch_all_weather(
-    countries: pd.DataFrame,
-    start_date: str,
-    end_date: str,
-) -> pd.DataFrame:
+def fetch_all_weather(countries: pd.DataFrame, start_date: str, end_date: str,) -> pd.DataFrame:
     frames = []
     failed_countries = []
 
@@ -247,7 +231,7 @@ def standardize_weather_response(df: pd.DataFrame) -> pd.DataFrame:
     for col in numeric_columns:
         df[col] = pd.to_numeric(df[col], errors="coerce")
 
-    df["ingested_at"] = datetime.now(timezone.utc)
+    df["ingested_at"] = pd.Timestamp.now(tz="UTC")
 
     column_order = [
         "iso3",
@@ -284,9 +268,6 @@ def materialize() -> pd.DataFrame:
     start_date, end_date = get_climate_date_range()
 
     countries = load_countries_seed(COUNTRIES_SEED_PATH)
-
-    print(f"Bruin vars received: {context.vars}")
-    print(f"Fetching daily weather from {start_date} to {end_date}.")
 
     print(f"Loaded {len(countries)} countries/entities from seed.")
     print(f"Fetching daily weather from {start_date} to {end_date}.")

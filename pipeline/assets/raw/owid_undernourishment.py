@@ -9,7 +9,6 @@ materialization:
 @bruin"""
 
 import io
-from datetime import datetime, timezone
 
 import pandas as pd
 import requests
@@ -35,17 +34,8 @@ def download_undernourishment_data(url: str) -> pd.DataFrame:
     return pd.read_csv(io.BytesIO(response.content))
 
 
-def materialize() -> pd.DataFrame:
-    start_year = int(context.vars.get("start_year", 2010))
-    end_year = int(context.vars.get("end_year", 2024))
-
-    if start_year > end_year:
-        raise ValueError(
-            f"start_year must be <= end_year, got {start_year} > {end_year}"
-        )
-
-    df = download_undernourishment_data(UNDERNOURISHMENT_URL)
-
+def standardize_columns(df: pd.DataFrame) -> pd.DataFrame:
+    df = df.copy()
     df = df.drop(columns=["index_level_0"], errors="ignore")
     df = df.reset_index(drop=True)
 
@@ -69,12 +59,27 @@ def materialize() -> pd.DataFrame:
         errors="coerce",
     )
 
+    return df
+
+
+def materialize() -> pd.DataFrame:
+    start_year = int(context.vars.get("start_year", 2010))
+    end_year = int(context.vars.get("end_year", 2024))
+
+    if start_year > end_year:
+        raise ValueError(
+            f"start_year must be <= end_year, got {start_year} > {end_year}"
+        )
+
+    df = download_undernourishment_data(UNDERNOURISHMENT_URL)
+    df = standardize_columns(df)
+    
     df = df[
         df["year"].between(start_year, end_year)
     ].copy()
 
     df["source"] = "Our World in Data, based on FAO SDG Indicators"
-    df["ingested_at"] = datetime.now(timezone.utc)
+    df["ingested_at"] = pd.Timestamp.now(tz="UTC")
 
     return df[
         [

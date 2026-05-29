@@ -22,11 +22,7 @@ WORLD_BANK_INDICATORS = {
 }
 
 
-def fetch_indicator_data(
-    indicator_code: str,
-    start_year: int,
-    end_year: int,
-) -> pd.DataFrame:
+def fetch_indicator_data(indicator_code: str, start_year: int, end_year: int) -> pd.DataFrame:
     df = wb.data.DataFrame(
         indicator_code,
         time=range(start_year, end_year + 1),
@@ -56,11 +52,7 @@ def convert_df_to_long(df: pd.DataFrame) -> pd.DataFrame:
     return df_long
 
 
-def add_indicator_metadata(
-    df: pd.DataFrame,
-    indicator_code: str,
-    indicator_name: str,
-) -> pd.DataFrame:
+def add_indicator_metadata(df: pd.DataFrame, indicator_code: str, indicator_name: str) -> pd.DataFrame:
     df = df.copy()
     df["indicator_code"] = indicator_code
     df["indicator_name"] = indicator_name
@@ -91,6 +83,6 @@ def materialize() -> pd.DataFrame:
 
     all_indicators_df = pd.concat(frames, ignore_index=True)
     all_indicators_df = all_indicators_df.reset_index(drop=True)
-    all_indicators_df["ingested_at"] = pd.Timestamp.utcnow()
+    all_indicators_df["ingested_at"] = pd.Timestamp.now(tz="UTC")
 
     return all_indicators_df

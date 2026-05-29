@@ -10,7 +10,6 @@ materialization:
 
 import io
 import zipfile
-from datetime import datetime, timezone
 
 import pandas as pd
 import requests
@@ -72,6 +71,6 @@ def materialize() -> pd.DataFrame:
     df = df.drop(columns=["index_level_0"], errors="ignore")
     df = df.reset_index(drop=True)
 
-    df["ingested_at"] = datetime.now(timezone.utc)
+    df["ingested_at"] = pd.Timestamp.now(tz="UTC")
 
     return df

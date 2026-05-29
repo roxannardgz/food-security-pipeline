@@ -59,10 +59,7 @@ def fetch_wb_country_metadata() -> dict[str, dict]:
     return result
 
 
-def build_seed_rows(
-    countries: list[dict],
-    wb_metadata: dict[str, dict],
-) -> list[dict]:
+def build_seed_rows(countries: list[dict], wb_metadata: dict[str, dict],) -> list[dict]:
     rows = []
 
     for c in countries:
@@ -70,7 +67,6 @@ def build_seed_rows(
         m49 = c.get("ccn3", "").strip()
 
         # Keep entries with ISO3 and numeric country/area code.
-        # Do not filter to UN members here; keep scope decisions for staging/marts.
         if not iso3 or not m49:
             continue
 
