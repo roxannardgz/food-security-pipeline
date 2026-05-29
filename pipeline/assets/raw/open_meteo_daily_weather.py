@@ -43,7 +43,7 @@ from bruin import context
 
 OPEN_METEO_URL = "https://archive-api.open-meteo.com/v1/archive"
 
-COUNTRIES_SEED_PATH = Path("pipeline/assets/seeds/countries.csv")
+COUNTRIES_SEED_PATH = Path("pipeline/seeds/countries.csv")
 
 REQUEST_DELAY_SECONDS = 6
 RATE_LIMIT_WAIT_SECONDS = 65

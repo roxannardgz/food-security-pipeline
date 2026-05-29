@@ -3,7 +3,7 @@ type: duckdb.seed
 connection: duckdb_default
 
 parameters:
-  path: countries.csv
+  path: ../../seeds/countries.csv
 
 columns:
   - name: iso3
