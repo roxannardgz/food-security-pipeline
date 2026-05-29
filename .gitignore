@@ -12,3 +12,14 @@ logs/*.log
 
 .vscode/
 logs/queries
+
+dashboard/node_modules/
+dashboard/.evidence/template/
+dashboard/.evidence/meta/
+dashboard/.evidence/data/
+dashboard/.svelte-kit/
+dashboard/build/
+dashboard/static/data/
+dashboard/.DS_Store
+dashboard/*.log
+dashboard/sources/**/*.options.yaml

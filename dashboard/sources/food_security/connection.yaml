@@ -1,0 +1,5 @@
+# This file was automatically generated
+name: food_security
+type: duckdb
+options:
+  filename: ../../../data/warehouse/food_security.duckdb
