@@ -1,5 +1,5 @@
 name: food_security_pipeline
-schedule: "0 6 1 1,4,7,10 *"
+schedule: "0 6 1 2 *"
 start_date: "2024-01-01"
 catchup: false
 
