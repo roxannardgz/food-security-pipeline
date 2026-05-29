@@ -20,6 +20,21 @@ columns:
   - name: weather_observation_days
     checks:
       - name: not_null
+
+custom_checks:
+  - name: unique_country_year
+    description: "Combination of country_code and year should be unique"
+    count: 0
+    query: |
+      SELECT
+          country_code,
+          year,
+          COUNT(*) AS row_count
+      FROM {{ this }}
+      GROUP BY
+          country_code,
+          year
+      HAVING COUNT(*) > 1
 @bruin */
 
 
