@@ -1,8 +1,12 @@
 ---
 title: Global Food Security Pressure
+hide_title: true
+sidebar_position: 1
 ---
 
+> This dashboard is an independent portfolio project, not an official food security report. Data comes from public sources and is transformed for analytical and educational purposes. For methodology and source details, see the [project README](https://github.com/roxannardgz/food-security-pipeline).
 
+# Global Food Security Pressure
 A country-year analysis tracking undernourishment, food prices, economic vulnerability, and food supply stability across 160+ countries.
 
 <Details title='How to read this dashboard'>
@@ -44,20 +48,10 @@ ORDER BY year DESC
 ```sql kpis
 SELECT
     COUNT(DISTINCT country_code) AS countries,
-    ROUND(AVG(overall_pressure_score), 3) AS avg_pressure_score
+    ROUND(AVG(overall_pressure_score), 3) AS avg_pressure_score,
+    ROUND(AVG(undernourishment_prevalence_pct), 1) AS avg_undernourishment
 FROM food_security.country_food_security_yearly
 WHERE year = ${inputs.selected_year.value}
-```
-
-```sql kpi_highest_undernourishment
-SELECT
-    country_name AS country,
-    undernourishment_prevalence_pct
-FROM food_security.country_food_security_yearly
-WHERE year = ${inputs.selected_year.value}
-  AND undernourishment_prevalence_pct IS NOT NULL
-ORDER BY undernourishment_prevalence_pct DESC
-LIMIT 1
 ```
 
 ```sql kpi_highest_pressure
@@ -108,7 +102,7 @@ LIMIT 1
 
 <Grid cols=3>
     <BigValue data={kpis} value=countries title="Countries Tracked" />
-    <BigValue data={kpi_highest_undernourishment} value=undernourishment_prevalence_pct title="Highest Undernourishment" fmt="0.0'%'" />
+    <BigValue data={kpis} value=avg_undernourishment title="Average Undernourishment" fmt="0.0'%'" />
     <BigValue data={kpis} value=avg_pressure_score title="Avg Pressure Score" fmt=pct />
 
     <BigValue data={kpi_common_driver} value=main_pressure_driver title="Most Common Driver" />
