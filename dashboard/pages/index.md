@@ -131,7 +131,7 @@ Overall Food Security Pressure Score
 <AreaMap
     data={map_data}
     areaCol=country_code
-    geoJsonUrl="/world.geojson"
+    geoJsonUrl="world.geojson"
     geoId="ISO3166-1-Alpha-3"
     value=overall_pressure_score
     valueFmt=pct
