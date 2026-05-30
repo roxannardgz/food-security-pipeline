@@ -365,7 +365,7 @@ UNION ALL
 
 SELECT
     country_name,
-    'Food Availability' AS driver,
+    'Availability Pressure' AS driver,
     food_availability_pressure_score AS score
 FROM food_security.country_food_security_yearly
 WHERE year = (

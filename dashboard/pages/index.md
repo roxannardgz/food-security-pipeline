@@ -102,7 +102,7 @@ LIMIT 1
 
 <Grid cols=3>
     <BigValue data={kpis} value=countries title="Countries Tracked" />
-    <BigValue data={kpis} value=avg_undernourishment title="Average Undernourishment" fmt="0.0'%'" />
+    <BigValue data={kpis} value=avg_undernourishment title="Average Undernourishment (%)" fmt="0.0" />
     <BigValue data={kpis} value=avg_pressure_score title="Avg Pressure Score" fmt=pct />
 
     <BigValue data={kpi_common_driver} value=main_pressure_driver title="Most Common Driver" />
