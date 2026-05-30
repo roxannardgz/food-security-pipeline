@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/food-security-pipeline/favicon.ico" sizes="32x32" />
+		<link rel="icon" href="/food-security-pipeline/icon.svg" type="image/svg+xml" />
+		<link rel="apple-touch-icon" href="/food-security-pipeline/apple-touch-icon.png" />
+		<link rel="manifest" href="/food-security-pipeline/manifest.webmanifest" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<script>
+			try {
+				/** @type {'light' | 'dark' | 'system'} */
+				const savedTheme = localStorage.getItem('evidence-theme') ?? 'system';
+				const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+				const theme = savedTheme === 'system' ? (prefersDark ? 'dark' : 'light') : savedTheme;
+				document.documentElement.setAttribute('data-theme', theme);
+			} catch (e) {}
+		</script>
+		
+		<link href="/food-security-pipeline/_app/immutable/assets/0.0Q6XFXHj.css" rel="stylesheet">
+		<link href="/food-security-pipeline/_app/immutable/assets/VennDiagram.BCpuTJYF.css" rel="stylesheet">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/entry/start.DTCj2CjR.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/entry.BAp6vOa_.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/scheduler.DYsEJJnm.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/entry/app.DgTa5eba.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/preload-helper.DGa_QAYg.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/index.DaDwQE1z.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/nodes/0.DUZD7SQ2.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/index.rV6zwFgL.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/VennDiagram.svelte_svelte_type_style_lang.C_ezGKFc.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/button.D6nixP0u.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/stores.Br8zC9p-.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/index.C2WBBp1U.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/scroll.CLF0EIGf.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/AccordionItem.B13lzNlU.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/checkRequiredProps.o_C_V3S5.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/nodes/6.DJCgLij7.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/Value.odEfF2Fl.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/Grid.1SUOIOrv.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/BarChart.BDkqgqmP.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/BigValue.B_vkCUME.js">
+		<link rel="modulepreload" href="/food-security-pipeline/_app/immutable/chunks/LineChart.-ZdynWx_.js"><title>Compare</title><!-- HEAD_svelte-2igo1p_START --> <meta property="og:title" content="Compare"> <meta name="twitter:title" content="Compare"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@evidence_dev"> <!-- HEAD_svelte-2igo1p_END -->
+	</head>
+	<body>
+		<script>
+			
+		</script>
+		<div>
+			<!-- SvelteKit Hydrated Content -->
+			   <div class="z-[1] fixed right-0 bottom-0 mx-10 my-6 w-80"></div> <div data-sveltekit-preload-data="hover" class="antialiased"> <header class="fixed w-full top-0 z-40 flex h-12 shrink-0 justify-start items-center gap-x-4 border-b border-base-300/50 bg-base-100/90 backdrop-blur print:hidden"><div class="mx-auto px-5 sm:px-6 md:px-12 flex flex-1 items-center justify-between" style="max-width:1600px;"><div class="flex gap-x-4 items-center"><button type="button" class="text-base-content hover:bg-base-200 rounded-lg p-1 -ml-1 transition-all duration-500 md:hidden"><span class="sr-only" data-svelte-h="svelte-73kebv">Open sidebar</span> <svg class="w-5 h-5" width="100%" height="100%" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 6l16 0"></path><path d="M4 12l16 0"></path><path d="M4 18l16 0"></path></svg></button> <a href="/food-security-pipeline/" class="text-sm font-bold text-base-content hidden md:block"><img src="/food-security-pipeline/_app/immutable/assets/wordmark-black.rfl-FBgf.png" alt="Home" class="h-5 aspect-auto block dark:hidden" href="/food-security-pipeline/"> <img src="/food-security-pipeline/_app/immutable/assets/wordmark-white.C8ZS96Ri.png" alt="Home" class="h-5 aspect-auto hidden dark:block" href="/food-security-pipeline/"></a></div> <div class="flex gap-2 text-sm items-center"> <div class="flex gap-2 items-center">   </div> <div class="relative"> <button type="button" tabindex="0" aria-controls="t0YuI_YO_B" aria-expanded="false" data-state="closed" id="VjkijVezX1" data-melt-dropdown-menu-trigger="" data-menu-trigger="" class="inline-flex items-center justify-center font-medium whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-base-content-muted disabled:pointer-events-none disabled:opacity-50 hover:text-base-content h-8 rounded-md text-xs px-1 hover:bg-base-200 shadow-base-200" aria-label="Menu" data-button-root=""><svg class="h-6 w-6" width="100%" height="100%" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg></button> </div></div></div></header> <div class="print:w-[650px] print:md:w-[841px] mx-auto print:md:px-0 print:px-0 px-6 sm:px-8 md:px-12 flex justify-start" style="max-width:1600px;"><div class="print:hidden">  <aside class="w-48 flex-none hidden md:flex"><div class="hidden: md:block fixed w-48 top-20 bottom-8 overflow-y-auto flex-1 text-sm pretty-scrollbar"><div class="flex flex-col pb-6"><a class="sticky top-0 bg-base-100 shadow shadow-base-100 font-semibold pb-1 mb-1 group inline-block capitalize hover:underline text-base-heading" href="/food-security-pipeline/">Home</a>  <a class="group inline-block py-1 capitalize transition-all duration-100 text-base-content-muted hover:text-base-content" href="/food-security-pipeline/trends">Trends  </a> <a class="group inline-block py-1 capitalize transition-all duration-100 text-base-content-muted hover:text-base-content" href="/food-security-pipeline/country-detail">Country Detail  </a> <a class="group inline-block py-1 capitalize transition-all duration-100 text-base-content-muted hover:text-base-content" href="/food-security-pipeline/comparison">Compare  </a></div> </div> <div class="fixed bottom-0 text-xs py-2" data-svelte-h="svelte-fworv4"><a href="https://www.evidence.dev" class="bg-gradient-to-r inline-block antialiased font-medium">Built with Evidence</a></div></aside></div> <main class="md:pl-8 md:pr-8  mt-16 sm:mt-20 flex-grow overflow-x-hidden print:px-0 print:mt-8"><div class="print:hidden"><div class="flex items-start mt-0 whitespace-nowrap overflow-auto"><div class="inline-flex items-center text-sm capitalize gap-1 text-base-content-muted mb-2 sm:mb-4"><a href="/food-security-pipeline/" class="hover:underline">Home </a><svg class="icon icon-tabler icon-tabler-chevron-right" width="12px" height="12px" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 6l6 6l-6 6"></path></svg> <a href="/food-security-pipeline/comparison" class="hover:underline">Compare</a></div></div></div> <article id="evidence-main-article" class="select-text markdown pb-10">      <h1 class="markdown" id="compare-countries" data-svelte-h="svelte-1de2hir"><a href="#compare-countries">Compare Countries</a></h1> <p class="markdown" data-svelte-h="svelte-15351pq">Compare food security pressure, undernourishment, selected indicators, and pressure drivers between two countries.</p> <p class="markdown" data-svelte-h="svelte-rsd8gs"><a href="/food-security-pipeline/" class="markdown">Back to Overview</a></p>  <div class="over-container svelte-1p12lev"> </div> <div class="over-container svelte-1p12lev"> </div> <div class="over-container svelte-1p12lev"> </div> <div class="over-container svelte-1p12lev"> </div> <div class="grid grid-cols-2 gap-8"><div class="pr-8 border-r border-gray-200"><div class="flex justify-end text-right"><div class="w-72 text-right">  <div class="contents print:hidden"><div class="mt-2 mb-4 ml-0 mr-2 inline-block"> <button type="button" tabindex="0" role="combobox" aria-haspopup="dialog" aria-expanded="false" data-state="closed" id="YL5dgA7nv6" data-melt-popover-trigger="" data-popover-trigger="" class="inline-flex items-center justify-center font-medium whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-base-content-muted disabled:pointer-events-none disabled:opacity-50 bg-transparent shadow-sm rounded-md px-3 text-xs min-w-5 h-8 border border-base-300 hover:bg-base-200 shadow-base-200" aria-label="Country A" data-button-root="">Country A  <div role="none" aria-orientation="vertical" aria-hidden data-orientation="vertical" data-melt-separator="" data-separator-root="" class="shrink-0 bg-base-300 w-[1px] mx-2 h-4"></div> Haiti <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" class="ml-2 h-4 w-4"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.93179 5.43179C4.75605 5.60753 4.75605 5.89245 4.93179 6.06819C5.10753 6.24392 5.39245 6.24392 5.56819 6.06819L7.49999 4.13638L9.43179 6.06819C9.60753 6.24392 9.89245 6.24392 10.0682 6.06819C10.2439 5.89245 10.2439 5.60753 10.0682 5.43179L7.81819 3.18179C7.73379 3.0974 7.61933 3.04999 7.49999 3.04999C7.38064 3.04999 7.26618 3.0974 7.18179 3.18179L4.93179 5.43179ZM10.0682 9.56819C10.2439 9.39245 10.2439 9.10753 10.0682 8.93179C9.89245 8.75606 9.60753 8.75606 9.43179 8.93179L7.49999 10.8636L5.56819 8.93179C5.39245 8.75606 5.10753 8.75606 4.93179 8.93179C4.75605 9.10753 4.75605 9.39245 4.93179 9.56819L7.18179 11.8182C7.35753 11.9939 7.64245 11.9939 7.81819 11.8182L10.0682 9.56819Z" fill="currentColor"></path></svg> </button> </div></div></div></div> <div class="flex justify-end text-right"><div class="w-72 text-right"><div class="grid grid-cols-1 gap-4">  <div class="inline-block font-sans pt-2 pb-3 pl-0 mr-3 items-center align-top" style="
+        min-width: 18%;
+        max-width: none;
+		"><p class="text-sm align-top leading-none">Pressure Score </p> <div class="relative text-xl font-medium mt-1.5">   <span style="color: ">90% </span> </div> </div>   <div class="inline-block font-sans pt-2 pb-3 pl-0 mr-3 items-center align-top" style="
+        min-width: 18%;
+        max-width: none;
+		"><p class="text-sm align-top leading-none">Undernourishment </p> <div class="relative text-xl font-medium mt-1.5">   <span style="color: ">54.2% </span> </div> </div>   <div class="inline-block font-sans pt-2 pb-3 pl-0 mr-3 items-center align-top" style="
+        min-width: 18%;
+        max-width: none;
+		"><p class="text-sm align-top leading-none">Main Driver </p> <div class="relative text-xl font-medium mt-1.5">   <span style="color: ">food_availability </span> </div> </div></div></div></div></div> <div class="pl-4"><div class="flex justify-start"><div class="w-72">  <div class="contents print:hidden"><div class="mt-2 mb-4 ml-0 mr-2 inline-block"> <button type="button" tabindex="0" role="combobox" aria-haspopup="dialog" aria-expanded="false" data-state="closed" id="g7WdltF0-E" data-melt-popover-trigger="" data-popover-trigger="" class="inline-flex items-center justify-center font-medium whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-base-content-muted disabled:pointer-events-none disabled:opacity-50 bg-transparent shadow-sm rounded-md px-3 text-xs min-w-5 h-8 border border-base-300 hover:bg-base-200 shadow-base-200" aria-label="Country B" data-button-root="">Country B  <div role="none" aria-orientation="vertical" aria-hidden data-orientation="vertical" data-melt-separator="" data-separator-root="" class="shrink-0 bg-base-300 w-[1px] mx-2 h-4"></div> Dominican Republic <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" class="ml-2 h-4 w-4"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.93179 5.43179C4.75605 5.60753 4.75605 5.89245 4.93179 6.06819C5.10753 6.24392 5.39245 6.24392 5.56819 6.06819L7.49999 4.13638L9.43179 6.06819C9.60753 6.24392 9.89245 6.24392 10.0682 6.06819C10.2439 5.89245 10.2439 5.60753 10.0682 5.43179L7.81819 3.18179C7.73379 3.0974 7.61933 3.04999 7.49999 3.04999C7.38064 3.04999 7.26618 3.0974 7.18179 3.18179L4.93179 5.43179ZM10.0682 9.56819C10.2439 9.39245 10.2439 9.10753 10.0682 8.93179C9.89245 8.75606 9.60753 8.75606 9.43179 8.93179L7.49999 10.8636L5.56819 8.93179C5.39245 8.75606 5.10753 8.75606 4.93179 8.93179C4.75605 9.10753 4.75605 9.39245 4.93179 9.56819L7.18179 11.8182C7.35753 11.9939 7.64245 11.9939 7.81819 11.8182L10.0682 9.56819Z" fill="currentColor"></path></svg> </button> </div></div></div></div> <div class="grid grid-cols-1 gap-4">  <div class="inline-block font-sans pt-2 pb-3 pl-0 mr-3 items-center align-top" style="
+        min-width: 18%;
+        max-width: none;
+		"><p class="text-sm align-top leading-none">Pressure Score </p> <div class="relative text-xl font-medium mt-1.5">   <span style="color: ">29% </span> </div> </div>   <div class="inline-block font-sans pt-2 pb-3 pl-0 mr-3 items-center align-top" style="
+        min-width: 18%;
+        max-width: none;
+		"><p class="text-sm align-top leading-none">Undernourishment </p> <div class="relative text-xl font-medium mt-1.5">   <span style="color: ">3.6% </span> </div> </div>   <div class="inline-block font-sans pt-2 pb-3 pl-0 mr-3 items-center align-top" style="
+        min-width: 18%;
+        max-width: none;
+		"><p class="text-sm align-top leading-none">Main Driver </p> <div class="relative text-xl font-medium mt-1.5">   <span style="color: ">economic </span> </div> </div></div></div></div> <div class="text-sm text-gray-500 mt-2 text-center">Showing latest available year:  <span style="color: ">2023 </span>.</div> <hr class="markdown">  <h2 class="markdown" id="overall-pressure-score-over-time" data-svelte-h="svelte-dt9rfb"><a href="#overall-pressure-score-over-time">Overall Pressure Score Over Time</a></h2> <div class="over-container svelte-1p12lev"> </div>     <div role="none" class="chart-container mt-2 mb-3 svelte-19r8f8"><div role="status" class="animate-pulse"><span class="sr-only" data-svelte-h="svelte-1wtojot">Loading...</span> <div class="bg-base-100 rounded-md max-w-[100%]" style="height:215px; margin-top: 15px; margin-bottom: 31px;"></div></div>  <div class="chart-footer svelte-19r8f8"> </div> </div>  <hr class="markdown">  <h2 class="markdown" id="selected-indicator-over-time" data-svelte-h="svelte-p77gu9"><a href="#selected-indicator-over-time">Selected Indicator Over Time</a></h2> <div class="over-container svelte-1p12lev"> </div> <div class="flex justify-end"><div class="w-72">  <div class="contents print:hidden"><div class="mt-2 mb-4 ml-0 mr-2 inline-block"> <button type="button" tabindex="0" role="combobox" aria-haspopup="dialog" aria-expanded="false" data-state="closed" id="iUDb2EEqNE" data-melt-popover-trigger="" data-popover-trigger="" class="inline-flex items-center justify-center font-medium whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-base-content-muted disabled:pointer-events-none disabled:opacity-50 bg-transparent shadow-sm rounded-md px-3 text-xs min-w-5 h-8 border border-base-300 hover:bg-base-200 shadow-base-200" aria-label="Indicator" data-button-root="">Indicator  <div role="none" aria-orientation="vertical" aria-hidden data-orientation="vertical" data-melt-separator="" data-separator-root="" class="shrink-0 bg-base-300 w-[1px] mx-2 h-4"></div> Undernourishment (%) <svg viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" class="ml-2 h-4 w-4"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.93179 5.43179C4.75605 5.60753 4.75605 5.89245 4.93179 6.06819C5.10753 6.24392 5.39245 6.24392 5.56819 6.06819L7.49999 4.13638L9.43179 6.06819C9.60753 6.24392 9.89245 6.24392 10.0682 6.06819C10.2439 5.89245 10.2439 5.60753 10.0682 5.43179L7.81819 3.18179C7.73379 3.0974 7.61933 3.04999 7.49999 3.04999C7.38064 3.04999 7.26618 3.0974 7.18179 3.18179L4.93179 5.43179ZM10.0682 9.56819C10.2439 9.39245 10.2439 9.10753 10.0682 8.93179C9.89245 8.75606 9.60753 8.75606 9.43179 8.93179L7.49999 10.8636L5.56819 8.93179C5.39245 8.75606 5.10753 8.75606 4.93179 8.93179C4.75605 9.10753 4.75605 9.39245 4.93179 9.56819L7.18179 11.8182C7.35753 11.9939 7.64245 11.9939 7.81819 11.8182L10.0682 9.56819Z" fill="currentColor"></path></svg> </button> </div></div></div></div> <div class="over-container svelte-1p12lev"> </div>     <div role="none" class="chart-container mt-2 mb-3 svelte-19r8f8"><div role="status" class="animate-pulse"><span class="sr-only" data-svelte-h="svelte-1wtojot">Loading...</span> <div class="bg-base-100 rounded-md max-w-[100%]" style="height:215px; margin-top: 15px; margin-bottom: 31px;"></div></div>  <div class="chart-footer svelte-19r8f8"> </div> </div>  <hr class="markdown">  <h2 class="markdown" id="driver-score-comparison" data-svelte-h="svelte-1lnd8eb"><a href="#driver-score-comparison">Driver Score Comparison</a></h2> <div class="text-sm text-gray-500">Driver scores shown for  <span style="color: ">2023 </span>.</div> <div class="over-container svelte-1p12lev"> </div>     <div role="none" class="chart-container mt-2 mb-3 svelte-19r8f8"><div role="status" class="animate-pulse"><span class="sr-only" data-svelte-h="svelte-1wtojot">Loading...</span> <div class="bg-base-100 rounded-md max-w-[100%]" style="height:215px; margin-top: 15px; margin-bottom: 31px;"></div></div>  <div class="chart-footer svelte-19r8f8"> </div> </div> </article></main> <div class="print:hidden"><aside class="hidden lg:block w-48"><div class="fixed w-48 top-20 bottom-20 pl-4 px-3 overflow-auto pretty-scrollbar"></div></aside></div></div></div>  <footer class="mt-16 border-t border-gray-200 pt-6 pb-8 text-sm text-gray-500 text-center" data-svelte-h="svelte-q6w9os"><p>Built by Roxanna R ✨
+		<a href="https://www.linkedin.com/in/roxannardgz/" target="_blank" class="underline">LinkedIn</a>
+		·
+		<a href="https://github.com/roxannardgz/food-security-pipeline" target="_blank" class="underline">GitHub Repo</a></p></footer> 
+			<script type="application/json" data-sveltekit-fetched data-url="/food-security-pipeline/api/customFormattingSettings.json/GET.json">{"status":200,"statusText":"","headers":{},"body":"{\"customFormattingSettings\":{\"version\":\"1.0\",\"customFormats\":[]}}"}</script>
+			<script type="application/json" data-sveltekit-fetched data-url="/food-security-pipeline/api/pagesManifest.json">{"status":200,"statusText":"","headers":{},"body":"{\"label\":\"Home\",\"href\":\"/\",\"children\":{\"backup\":{\"label\":\"backup\",\"href\":\"/backup\",\"children\":{},\"frontMatter\":{\"title\":\"Global Food Security Pressure Dashboard\",\"sidebar_link\":false},\"isTemplated\":false,\"isPage\":true},\"comparison\":{\"label\":\"comparison\",\"href\":\"/comparison\",\"children\":{},\"frontMatter\":{\"title\":\"Compare\",\"hide_title\":true,\"sidebar_position\":4},\"isTemplated\":false,\"isPage\":true},\"country-detail\":{\"label\":\"country detail\",\"href\":\"/country-detail\",\"children\":{},\"frontMatter\":{\"title\":\"Country Detail\",\"hide_title\":true,\"sidebar_position\":3},\"isTemplated\":false,\"isPage\":true},\"trends\":{\"label\":\"trends\",\"href\":\"/trends\",\"children\":{},\"frontMatter\":{\"title\":\"Trends\",\"hide_title\":true,\"sidebar_position\":2},\"isTemplated\":false,\"isPage\":true}},\"frontMatter\":{\"title\":\"Global Food Security Pressure\",\"hide_title\":true,\"sidebar_position\":1},\"isTemplated\":false,\"isPage\":true}"}</script>
+			<script type="application/json" data-sveltekit-fetched data-url="/food-security-pipeline/api//comparison/evidencemeta.json">{"status":200,"statusText":"","headers":{},"body":"{\"queries\":[{\"id\":\"country_filter\",\"compiledQueryString\":\"SELECT DISTINCT\\n    country_code,\\n    country_name\\nFROM food_security.country_food_security_yearly\\nORDER BY country_name\",\"inputQueryString\":\"SELECT DISTINCT\\n    country_code,\\n    country_name\\nFROM food_security.country_food_security_yearly\\nORDER BY country_name\",\"compiled\":false,\"inline\":true},{\"id\":\"latest_year\",\"compiledQueryString\":\"SELECT\\n    MAX(year) AS year\\nFROM food_security.country_food_security_yearly\",\"inputQueryString\":\"SELECT\\n    MAX(year) AS year\\nFROM food_security.country_food_security_yearly\",\"compiled\":false,\"inline\":true},{\"id\":\"country_a_snapshot\",\"compiledQueryString\":\"SELECT\\n    country_name,\\n    CAST(ROUND(overall_pressure_score * 100, 0) AS INTEGER) || '%' AS pressure_score_display,\\n    CAST(ROUND(undernourishment_prevalence_pct, 1) AS VARCHAR) || '%' AS undernourishment_display,\\n    main_pressure_driver\\nFROM food_security.country_food_security_yearly\\nWHERE year = (\\n    SELECT MAX(year)\\n    FROM food_security.country_food_security_yearly\\n)\\n  AND country_code = '${inputs.country_a.value}'\",\"inputQueryString\":\"SELECT\\n    country_name,\\n    CAST(ROUND(overall_pressure_score * 100, 0) AS INTEGER) || '%' AS pressure_score_display,\\n    CAST(ROUND(undernourishment_prevalence_pct, 1) AS VARCHAR) || '%' AS undernourishment_display,\\n    main_pressure_driver\\nFROM food_security.country_food_security_yearly\\nWHERE year = (\\n    SELECT MAX(year)\\n    FROM food_security.country_food_security_yearly\\n)\\n  AND country_code = '${inputs.country_a.value}'\",\"compiled\":false,\"inline\":true},{\"id\":\"country_b_snapshot\",\"compiledQueryString\":\"SELECT\\n    country_name,\\n    CAST(ROUND(overall_pressure_score * 100, 0) AS INTEGER) || '%' AS pressure_score_display,\\n    CAST(ROUND(undernourishment_prevalence_pct, 1) AS VARCHAR) || '%' AS undernourishment_display,\\n    main_pressure_driver\\nFROM food_security.country_food_security_yearly\\nWHERE year = (\\n    SELECT MAX(year)\\n    FROM food_security.country_food_security_yearly\\n)\\n  AND country_code = '${inputs.country_b.value}'\",\"inputQueryString\":\"SELECT\\n    country_name,\\n    CAST(ROUND(overall_pressure_score * 100, 0) AS INTEGER) || '%' AS pressure_score_display,\\n    CAST(ROUND(undernourishment_prevalence_pct, 1) AS VARCHAR) || '%' AS undernourishment_display,\\n    main_pressure_driver\\nFROM food_security.country_food_security_yearly\\nWHERE year = (\\n    SELECT MAX(year)\\n    FROM food_security.country_food_security_yearly\\n)\\n  AND country_code = '${inputs.country_b.value}'\",\"compiled\":false,\"inline\":true},{\"id\":\"pressure_comparison\",\"compiledQueryString\":\"SELECT\\n    year,\\n    country_name,\\n    overall_pressure_score AS pressure_score\\nFROM food_security.country_food_security_yearly\\nWHERE country_code IN (\\n    '${inputs.country_a.value}',\\n    '${inputs.country_b.value}'\\n)\\nORDER BY year, country_name\",\"inputQueryString\":\"SELECT\\n    year,\\n    country_name,\\n    overall_pressure_score AS pressure_score\\nFROM food_security.country_food_security_yearly\\nWHERE country_code IN (\\n    '${inputs.country_a.value}',\\n    '${inputs.country_b.value}'\\n)\\nORDER BY year, country_name\",\"compiled\":false,\"inline\":true},{\"id\":\"indicator_filter\",\"compiledQueryString\":\"SELECT 'undernourishment_prevalence_pct' AS indicator, 'Undernourishment (%)' AS indicator_label\\n\\nUNION ALL\\n\\nSELECT 'food_price_inflation_pct' AS indicator, 'Food Price Inflation (%)' AS indicator_label\\n\\nUNION ALL\\n\\nSELECT 'gdp_per_capita_current_usd' AS indicator, 'GDP per Capita (Current USD)' AS indicator_label\\n\\nUNION ALL\\n\\nSELECT 'poverty_headcount_215_pct' AS indicator, 'Poverty Headcount (%)' AS indicator_label\\n\\nUNION ALL\\n\\nSELECT 'food_supply_variability_kcal' AS indicator, 'Food Supply Variability' AS indicator_label\\n\\nUNION ALL\\n\\nSELECT 'avg_temp_mean' AS indicator, 'Average Temperature (°C)' AS indicator_label\\n\\nUNION ALL\\n\\nSELECT 'total_precipitation' AS indicator, 'Total Precipitation' AS indicator_label\",\"inputQueryString\":\"SELECT 'undernourishment_prevalence_pct' AS indicator, 'Undernourishment (%)' AS indicator_label\\n\\nUNION ALL\\n\\nSELECT 'food_price_inflation_pct' AS indicator, 'Food Price Inflation (%)' AS indicator_label\\n\\nUNION ALL\\n\\nSELECT 'gdp_per_capita_current_usd' AS indicator, 'GDP per Capita (Current USD)' AS indicator_label\\n\\nUNION ALL\\n\\nSELECT 'poverty_headcount_215_pct' AS indicator, 'Poverty Headcount (%)' AS indicator_label\\n\\nUNION ALL\\n\\nSELECT 'food_supply_variability_kcal' AS indicator, 'Food Supply Variability' AS indicator_label\\n\\nUNION ALL\\n\\nSELECT 'avg_temp_mean' AS indicator, 'Average Temperature (°C)' AS indicator_label\\n\\nUNION ALL\\n\\nSELECT 'total_precipitation' AS indicator, 'Total Precipitation' AS indicator_label\",\"compiled\":false,\"inline\":true},{\"id\":\"selected_indicator_trend\",\"compiledQueryString\":\"SELECT\\n    year,\\n    country_name,\\n    CASE\\n        WHEN '${inputs.selected_indicator.value}' = 'undernourishment_prevalence_pct'\\n            THEN undernourishment_prevalence_pct\\n        WHEN '${inputs.selected_indicator.value}' = 'food_price_inflation_pct'\\n            THEN food_price_inflation_pct\\n        WHEN '${inputs.selected_indicator.value}' = 'gdp_per_capita_current_usd'\\n            THEN gdp_per_capita_current_usd\\n        WHEN '${inputs.selected_indicator.value}' = 'poverty_headcount_215_pct'\\n            THEN poverty_headcount_215_pct\\n        WHEN '${inputs.selected_indicator.value}' = 'food_supply_variability_kcal'\\n            THEN TRY_CAST(food_supply_variability_kcal AS DOUBLE)\\n        WHEN '${inputs.selected_indicator.value}' = 'avg_temp_mean'\\n            THEN avg_temp_mean\\n        WHEN '${inputs.selected_indicator.value}' = 'total_precipitation'\\n            THEN total_precipitation\\n    END AS indicator_value\\nFROM food_security.country_food_security_yearly\\nWHERE country_code IN (\\n    '${inputs.country_a.value}',\\n    '${inputs.country_b.value}'\\n)\\nORDER BY year, country_name\",\"inputQueryString\":\"SELECT\\n    year,\\n    country_name,\\n    CASE\\n        WHEN '${inputs.selected_indicator.value}' = 'undernourishment_prevalence_pct'\\n            THEN undernourishment_prevalence_pct\\n        WHEN '${inputs.selected_indicator.value}' = 'food_price_inflation_pct'\\n            THEN food_price_inflation_pct\\n        WHEN '${inputs.selected_indicator.value}' = 'gdp_per_capita_current_usd'\\n            THEN gdp_per_capita_current_usd\\n        WHEN '${inputs.selected_indicator.value}' = 'poverty_headcount_215_pct'\\n            THEN poverty_headcount_215_pct\\n        WHEN '${inputs.selected_indicator.value}' = 'food_supply_variability_kcal'\\n            THEN TRY_CAST(food_supply_variability_kcal AS DOUBLE)\\n        WHEN '${inputs.selected_indicator.value}' = 'avg_temp_mean'\\n            THEN avg_temp_mean\\n        WHEN '${inputs.selected_indicator.value}' = 'total_precipitation'\\n            THEN total_precipitation\\n    END AS indicator_value\\nFROM food_security.country_food_security_yearly\\nWHERE country_code IN (\\n    '${inputs.country_a.value}',\\n    '${inputs.country_b.value}'\\n)\\nORDER BY year, country_name\",\"compiled\":false,\"inline\":true},{\"id\":\"driver_score_comparison\",\"compiledQueryString\":\"SELECT\\n    country_name,\\n    'Price Pressure' AS driver,\\n    price_pressure_score AS score\\nFROM food_security.country_food_security_yearly\\nWHERE year = (\\n    SELECT MAX(year)\\n    FROM food_security.country_food_security_yearly\\n)\\n  AND country_code IN (\\n      '${inputs.country_a.value}',\\n      '${inputs.country_b.value}'\\n  )\\n\\nUNION ALL\\n\\nSELECT\\n    country_name,\\n    'Economic Vulnerability' AS driver,\\n    economic_vulnerability_score AS score\\nFROM food_security.country_food_security_yearly\\nWHERE year = (\\n    SELECT MAX(year)\\n    FROM food_security.country_food_security_yearly\\n)\\n  AND country_code IN (\\n      '${inputs.country_a.value}',\\n      '${inputs.country_b.value}'\\n  )\\n\\nUNION ALL\\n\\nSELECT\\n    country_name,\\n    'Availability Pressure' AS driver,\\n    food_availability_pressure_score AS score\\nFROM food_security.country_food_security_yearly\\nWHERE year = (\\n    SELECT MAX(year)\\n    FROM food_security.country_food_security_yearly\\n)\\n  AND country_code IN (\\n      '${inputs.country_a.value}',\\n      '${inputs.country_b.value}'\\n  )\\n\\nORDER BY driver, country_name\",\"inputQueryString\":\"SELECT\\n    country_name,\\n    'Price Pressure' AS driver,\\n    price_pressure_score AS score\\nFROM food_security.country_food_security_yearly\\nWHERE year = (\\n    SELECT MAX(year)\\n    FROM food_security.country_food_security_yearly\\n)\\n  AND country_code IN (\\n      '${inputs.country_a.value}',\\n      '${inputs.country_b.value}'\\n  )\\n\\nUNION ALL\\n\\nSELECT\\n    country_name,\\n    'Economic Vulnerability' AS driver,\\n    economic_vulnerability_score AS score\\nFROM food_security.country_food_security_yearly\\nWHERE year = (\\n    SELECT MAX(year)\\n    FROM food_security.country_food_security_yearly\\n)\\n  AND country_code IN (\\n      '${inputs.country_a.value}',\\n      '${inputs.country_b.value}'\\n  )\\n\\nUNION ALL\\n\\nSELECT\\n    country_name,\\n    'Availability Pressure' AS driver,\\n    food_availability_pressure_score AS score\\nFROM food_security.country_food_security_yearly\\nWHERE year = (\\n    SELECT MAX(year)\\n    FROM food_security.country_food_security_yearly\\n)\\n  AND country_code IN (\\n      '${inputs.country_a.value}',\\n      '${inputs.country_b.value}'\\n  )\\n\\nORDER BY driver, country_name\",\"compiled\":false,\"inline\":true}]}"}</script>
+			<script>
+				{
+					__sveltekit_xh9to5 = {
+						base: "/food-security-pipeline",
+						assets: "/food-security-pipeline"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("/food-security-pipeline/_app/immutable/entry/start.DTCj2CjR.js"),
+						import("/food-security-pipeline/_app/immutable/entry/app.DgTa5eba.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 6],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		
+
+			<!-- SplashScreen -->
+			<div
+				aria-disabled
+				id="__evidence_project_splash"
+				data-test-id="__evidence_project_splash"
+				style="visibility: hidden"
+			>
+				<svg width="100" height="100" viewBox="-8 -8 588 588" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M7.19462e-05 74.3583C109.309 74.3583 195.795 86.2578 286.834 37.825C377.872 -10.6077 466.416 1.29174 573.667 1.29175L573.667 126.549C466.416 126.549 377.373 114.91 286.834 163.082C196.294 211.254 109.309 199.615 6.11417e-05 199.615L7.19462e-05 74.3583Z"
+						class="draw-path"
+					/>
+					<path
+						d="M573.669 499.31C464.36 499.31 377.874 487.411 286.835 535.843C195.797 584.276 107.252 572.377 0.0014801 572.377V447.12C107.252 447.12 196.295 458.758 286.835 410.586C377.375 362.415 464.36 374.053 573.669 374.053V499.31Z"
+						class="draw-path"
+					/>
+					<path
+						d="M452.896 186.499C395.028 187.686 341.581 194.947 286.835 224.074C211.396 264.212 136.995 262.826 52.2355 261.247C35.2696 260.931 17.8887 260.608 0.0014801 260.608V385.865C18.1032 385.865 35.6721 386.204 52.81 386.534C137.212 388.162 211.162 389.589 286.835 349.331C341.838 320.07 395.18 312.831 452.896 311.685V186.499Z"
+						class="draw-path"
+					/>
+				</svg>
+			</div>
+		</div>
+	</body>
+</html>
+
+<style>
+	#__evidence_project_splash {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: #ffffff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 9999;
+	}
+
+	[data-theme='dark'] #__evidence_project_splash {
+		background-color: #000000;
+	}
+
+	.draw-path {
+		fill: #000000;
+		animation: blinking-logo 2s;
+		animation-fill-mode: both;
+		animation-iteration-count: infinite;
+		animation-timing-function: ease-in-out;
+	}
+
+	[data-theme='dark'] .draw-path {
+		fill: #ffffff;
+	}
+
+	@keyframes blinking-logo {
+		0% {
+			fill-opacity: 1;
+		}
+		50% {
+			fill-opacity: 0.2;
+		}
+		100% {
+			fill-opacity: 1;
+		}
+	}
+</style>
